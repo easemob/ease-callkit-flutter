@@ -1,9 +1,9 @@
 import 'package:im_flutter_sdk/im_flutter_sdk.dart' as chat;
 
-typedef ChatCallKitClient = chat.EMClient;
-typedef ChatCallKitChatManager = chat.EMChatManager;
-typedef ChatCallKitEventHandler = chat.EMChatEventHandler;
-typedef ChatCallKitMessage = chat.EMMessage;
+typedef ChatCallKitClient = chat.ChatClient;
+typedef ChatCallKitChatManager = chat.ChatManager;
+typedef ChatCallKitEventHandler = chat.ChatEventHandler;
+typedef ChatCallKitMessage = chat.ChatMessage;
 typedef ChatCallKitMessageEvent = chat.ChatMessageEvent;
-typedef ChatCallKitChatError = chat.EMError;
-typedef ChatOptions = chat.EMOptions;
+typedef ChatCallKitChatError = chat.ChatError;
+typedef ChatOptions = chat.ChatOptions;

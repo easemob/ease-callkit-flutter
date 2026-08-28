@@ -171,7 +171,9 @@ class ChatCallKitManagerImpl {
     if (_chat.model.hasJoined) return;
     if (_chat.model.curCall == null ||
         _rtc.agoraAppId == null ||
-        rtcTokenHandler == null) return;
+        rtcTokenHandler == null) {
+      return;
+    }
 
     Map<String, int> agoraToken = await rtcTokenHandler!.call(
       _chat.model.curCall!.channel,

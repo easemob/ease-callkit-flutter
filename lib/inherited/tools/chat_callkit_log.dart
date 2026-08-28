@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:async';
 import 'dart:convert';
 import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart' as Path;
+import 'package:path/path.dart' as path;
 import 'package:flutter/foundation.dart';
 
 /// ChatCallKit 日志工具类
@@ -187,7 +187,7 @@ class ChatCallKitLogger {
         .where((entity) =>
             entity is File &&
             // 只匹配文件名（避免路径干扰）
-            logFileReg.hasMatch(Path.basename(entity.path)) &&
+            logFileReg.hasMatch(path.basename(entity.path)) &&
             // 排除正在写入的主文件
             entity.path != mainLogPath)
         .cast<File>()
@@ -221,7 +221,7 @@ class ChatCallKitLogger {
 
     // 计算过期时间（当前时间 - 保留天数）
     final DateTime expireTime =
-        DateTime.now().subtract(Duration(days: _maxLogRetentionDays));
+        DateTime.now().subtract(const Duration(days: _maxLogRetentionDays));
 
     // 正则匹配日志文件
     final RegExp logFileReg = RegExp(
@@ -232,7 +232,7 @@ class ChatCallKitLogger {
     // 遍历目录，清理过期文件
     await for (final FileSystemEntity entity in appDir.list()) {
       if (entity is File &&
-          logFileReg.hasMatch(Path.basename(entity.path)) &&
+          logFileReg.hasMatch(path.basename(entity.path)) &&
           entity.path != mainLogPath) {
         final DateTime lastModified = await entity.lastModified();
         if (lastModified.isBefore(expireTime)) {
