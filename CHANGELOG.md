@@ -1,3 +1,8 @@
+## 0.0.3
+- 升级 依赖 im_flutter_sdk 为 ^4.22.0；
+- 升级 example 的 Android 构建工具链以适配 Flutter 3.47（Gradle 8.14.3 / AGP 8.13.0 / KGP 2.3.0），仅示例工程构建配置；
+- 开始追踪根目录 pubspec.lock，保证长期搁置后依赖可复现、可构建。
+
 ## 0.0.2-beta.1
 - 更新版本为0.0.2-beta.1
 - 调整初始化RTC engine部分逻辑, 增加初始化部分log记录
