@@ -1,3 +1,8 @@
+## 0.0.4
+- 升级 依赖 im_flutter_sdk 为 ^4.25.0；
+- 撤销 0.0.3 开始追踪根目录 pubspec.lock 的做法：根目录 pubspec.lock 退出 git 追踪（本地文件保留），遵循 Dart 库包不提交 pubspec.lock 的约定；
+- 示例工程 example/pubspec.lock 仍保持 git 追踪。
+
 ## 0.0.3
 - 升级 依赖 im_flutter_sdk 为 ^4.22.0；
 - 升级 example 的 Android 构建工具链以适配 Flutter 3.47（Gradle 8.14.3 / AGP 8.13.0 / KGP 2.3.0），仅示例工程构建配置；
